@@ -1,1 +1,1 @@
-udacity-nlp-evaluta-news
+udacity-nlp-evalute-news
