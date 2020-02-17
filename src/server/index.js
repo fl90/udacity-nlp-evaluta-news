@@ -25,7 +25,7 @@ var textapi = new aylien({
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/dist/index.html')
+    res.sendFile(__dirname + '../../dist/index.html')
 })
 
 // designates what port the app will listen to for incoming requests
