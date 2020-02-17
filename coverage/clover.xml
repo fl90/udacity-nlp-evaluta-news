@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1581863553478" clover="3.2.0">
+  <project timestamp="1581863553478" name="All files">
+    <metrics statements="6" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0" elements="9" coveredelements="1" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
+    <file name="nameChecker.js" path="/Users/florian/Documents/Udacity/blog/udacity-nlp-evalute-news/src/client/js/nameChecker.js">
+      <metrics statements="6" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
