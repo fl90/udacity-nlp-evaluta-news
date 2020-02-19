@@ -26,13 +26,14 @@ console.log(__dirname)
 
 app.get('/', function (req, res) {
     var path = require('path');
-    res.sendFile(path.resolve('dist/index.html'));
+    // res.sendFile(path.resolve('dist/index.html'));
+    //res.sendFile('./dist/index.html');
 })
 
 // designates what port the app will listen to for incoming requests
 var port = process.env.PORT || 8080;
 app.listen(port, function () {
-    console.log('Example app listening on port 8080!');
+    console.log('Example app listening on port ' + port + '!' );
 })
 
 app.get('/test', function (req, res) {
@@ -50,7 +51,6 @@ function sentiment(req, res){
 
     textapi.sentiment({
         text: req.body.text,
-        url: 'https://www.google.de',
         mode: 'tweet'
         }, function(error, response){
         if(error === null){

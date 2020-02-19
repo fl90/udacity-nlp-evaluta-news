@@ -9,17 +9,24 @@ function sentimentAnalysis(event){
     let polarity_confidence = document.getElementById("polarity_confidence");
     let subjectivity_confidence = document.getElementById("subjectivity_confidence");
 
-    postData('sentiment', {
-        text: sentence.value
-    }).then(function(receivedData){
-        console.log(receivedData);
-        polarity.innerHTML = "Polarity: " + receivedData.polarity;
-        subjectivity.innerHTML = "Subjectivity: " + receivedData.subjectivity;
-        text.innerHTML = "Text: " + receivedData.text;
-        polarity_confidence.innerHTML = "Polarity Confidence: " + receivedData.polarity_confidence;
-        subjectivity_confidence.innerHTML = "Subjectivity Confidence: " + receivedData.subjectivity_confidence;
-        
-    })
+    if(sentence && sentence.value && !(sentence.value === ""))
+    {
+        postData('http://localhost:8080/sentiment', {
+            text: sentence.value
+        }).then(function(receivedData){
+            polarity.innerHTML = "Polarity: " + receivedData.polarity;
+            subjectivity.innerHTML = "Subjectivity: " + receivedData.subjectivity;
+            text.innerHTML = "Text: " + receivedData.text;
+            polarity_confidence.innerHTML = "Polarity Confidence: " + receivedData.polarity_confidence;
+            subjectivity_confidence.innerHTML = "Subjectivity Confidence: " + receivedData.subjectivity_confidence;
+        })
+    }
+    else {
+        polarity.innerHTML = "Please enter a sentence!";
+    }
+    
+
+    
 }
 
 /* Function to POST data */
@@ -43,5 +50,4 @@ const postData = async ( url = '', data = {})=>{
     }
 }
 
-module.exports = sentimentAnalysis;
 export { sentimentAnalysis }

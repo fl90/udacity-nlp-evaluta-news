@@ -14,5 +14,4 @@ function checkForName(inputText) {
     }
 }
 
-module.exports = checkForName;
 export { checkForName }
